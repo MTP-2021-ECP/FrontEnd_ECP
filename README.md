@@ -1,4 +1,4 @@
-# application
+# App RDV Vaccination COVid
 
 ## Project setup
 ```
