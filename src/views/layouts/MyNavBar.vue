@@ -1,19 +1,21 @@
 <template>
-  <nav>
-    <v-toolbar id="nav" class="primary lighten-2" dark flat app>
+  <nav >
+    <v-card class="overflow-hidden">
+    <v-toolbar id="nav" class="primary lighten-2" dark flat inset app width="auto">
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
       <v-spacer></v-spacer>
       <router-link :to="{ name: 'login'}">
       <v-btn class="ma-2" text icon>
-        <v-icon class="ma-2 deep-orange--text text--lighten-1" router :to="Home">mdi-account</v-icon>
+        <v-icon class="ma-2 deep-white--text text--lighten-1" router :to="Home">mdi-account</v-icon>
       </v-btn>
       </router-link>
       <router-link :to="{name: 'register'}">
       <v-btn class="ma-2" text icon>
-        <v-icon class="ma-2 deep-orange--text text--lighten-1">mdi-account-plus</v-icon>
+        <v-icon class="ma-2 deep-white--text text--lighten-1">mdi-account-plus</v-icon>
       </v-btn>
       </router-link>
     </v-toolbar>
+    </v-card>
     <v-navigation-drawer v-model="drawer" absolute temporary>
       <v-list nav dense>
         <v-list-item-avatar>

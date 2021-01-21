@@ -34,6 +34,8 @@ export default {
   box-sizing: border-box;
   height: 100vh;
   background-color: #eaeded;
+  font-family: 'Roboto', sans-serif;
+  color: #435f71;
 }
 .component-fade-enter-active, .component-fade-leave-active {
   transition: opacity .5s ease;
