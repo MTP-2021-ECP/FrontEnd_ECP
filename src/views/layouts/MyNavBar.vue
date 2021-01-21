@@ -14,6 +14,11 @@
         <v-icon class="ma-2 deep-white--text text--lighten-1">mdi-account-plus</v-icon>
       </v-btn>
       </router-link>
+      <router-link :to="{name: 'CovidCases'}">
+      <v-btn class="ma-2" text icon>
+        <v-icon class="ma-2 deep-white--text text--lighten-1">mdi-chart-box</v-icon>
+      </v-btn>
+      </router-link>
     </v-toolbar>
     </v-card>
     <v-navigation-drawer v-model="drawer" absolute temporary>
@@ -53,6 +58,8 @@ export default {
       links: [
         { icon: "mdi-home", text: "Home", route: "/" },
         { icon: "mdi-phone", text: "Contact", route: "/contact" },
+        { icon: "mdi-chart-box", text: "Statistiques", route: "/CovidCases" },
+
       ],
       items:[
         {icon: "mdi-home", route: "/"}
