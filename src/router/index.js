@@ -5,6 +5,7 @@ import Contact from '../views/Contact.vue'
 import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
 import CovidCases from '../views/CovidCases.vue'
+import Map from '../views/Map.vue'
 
 Vue.use(VueRouter);
 
@@ -14,6 +15,7 @@ const routes = [
   { path: "/login", name: "login", component: Login },
   { path: "/register", name: "register", component: Register},
   { path: "/CovidCases", name: "CovidCases", component: CovidCases},
+  { path: "/map", name: "map", component: Map},
 
 ];
 

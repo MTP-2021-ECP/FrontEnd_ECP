@@ -1,20 +1,17 @@
 <template>
   <div>
-    <StatsComponent />
+    <MapComponent />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import StatsComponent from "@/components/StatsComponent.vue";
+import MapComponent from "@/components/MapComponent.vue";
 
 export default {
   name: "Home",
   components: {
-    StatsComponent,
+    MapComponent,
   },
 };
 </script>
-
-<style lang="stylus">
-</style>

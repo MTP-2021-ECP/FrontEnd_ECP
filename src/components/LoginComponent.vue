@@ -1,9 +1,7 @@
 <template>
   <v-container id="login">
-    <div class="container pt-6">
-      <h1 class="text-center">SE CONNECTER</h1>
-    </div>
     <v-card id="card">
+      <h1 cclass="uppercase text-center mb-8" id="text1">J'ai déjà un compte FreeCovid</h1>
       <v-form class="" ref="form" v-model="valid" lazy-validation>
         <v-text-field
           prepend-icon="mdi-account"
@@ -86,5 +84,9 @@ export default {
 }
 #card {
   padding: 4rem
+}
+#text1 {
+  font-family: 'Roboto', sans-serif;
+  color: #435f71;
 }
 </style>
