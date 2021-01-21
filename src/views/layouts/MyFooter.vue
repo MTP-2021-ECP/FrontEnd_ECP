@@ -1,6 +1,6 @@
 <template>
-  <v-card id="footer" class="overflow-hidden">
-    <v-footer color="primary lighten-1" padless app inset>
+  <v-card >
+    <v-footer id="footer" app fixed>
       <v-row justify="center" no-gutters>
         <v-btn
           v-for="link in links"
@@ -33,4 +33,9 @@ export default {
 };
 </script>
 
-<style lang="stylus"></style>
+<style lang="stylus">
+#footer {
+  background: rgb(24,103,192);
+  background: linear-gradient(0deg, rgba(24,103,192,1) 0%, rgba(92,187,246,1) 100%); 
+}
+</style>

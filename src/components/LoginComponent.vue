@@ -6,24 +6,30 @@
     <v-card id="card">
       <v-form class="" ref="form" v-model="valid" lazy-validation>
         <v-text-field
-          v-model="name"
-          :counter="10"
-          :rules="nameRules"
-          label="Name"
-          required
-        ></v-text-field>
-
-        <v-text-field
+          prepend-icon="mdi-account"
           v-model="email"
           :rules="emailRules"
           label="E-mail"
           required
         ></v-text-field>
-
+        <v-text-field
+          v-model="password"
+          :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+          :type="show1 ? 'text' : 'password'"
+          :rules="passwordRules"
+          name="input-10-1"
+          label="Password"
+          hint="At least 8 characters"
+          counter
+          prepend-icon="mdi-key"
+          @click:append="show1 = !show1"
+          required
+        ></v-text-field>
+        <v-container class="pt-12">
         <v-btn
           :disabled="!valid"
-          color="success"
-          class="mr-6"
+          color="success" 
+          class="mr-4"
           @click="validate"
         >
           Validate
@@ -32,10 +38,7 @@
         <v-btn color="error" class="mr-4" @click="reset">
           Reset Form
         </v-btn>
-
-        <v-btn color="warning" @click="resetValidation">
-          Reset Validation
-        </v-btn>
+        </v-container>
       </v-form>
     </v-card>
   </v-container>
@@ -43,21 +46,24 @@
 
 <script>
 export default {
+  computed: {
+    passwordMatch() {
+      return () => this.password === this.verify || "Password must match";
+    },
+  },
   data: () => ({
+    show1: false,
     valid: true,
     name: "",
     nameRules: [
       (v) => !!v || "Name is required",
       (v) => (v && v.length <= 10) || "Name must be less than 10 characters",
     ],
-    email: "",
-    emailRules: [
-      (v) => !!v || "E-mail is required",
-      (v) => /.+@.+\..+/.test(v) || "E-mail must be valid",
+    password: "",
+    passwordRules: [
+      (v) => !!v || "adresse non valide",
+      (v) => v.length <= 10 || "adresse non valide",
     ],
-    select: null,
-    items: ["Item 1", "Item 2", "Item 3", "Item 4"],
-    checkbox: false,
   }),
 
   methods: {

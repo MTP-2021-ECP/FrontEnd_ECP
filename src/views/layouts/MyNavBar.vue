@@ -1,7 +1,7 @@
 <template>
-  <nav >
+  <nav id="navbar">
     <v-card class="overflow-hidden">
-    <v-toolbar id="nav" class="primary lighten-2" dark flat inset app width="auto">
+    <v-toolbar id="navbar"  dark flat inset app width="auto">
       <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
       <v-spacer></v-spacer>
       <router-link :to="{ name: 'login'}">
@@ -62,4 +62,9 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+#navbar {
+  background: rgb(24,103,192);
+  background: linear-gradient(0deg, rgba(24,103,192,1) 0%, rgba(92,187,246,1) 100%); 
+}
+</style>
