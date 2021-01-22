@@ -1,8 +1,11 @@
-<template>
-  <v-container id="login">
-    <v-card id="card">
-      <h1 cclass="uppercase text-center mb-8" id="text1">J'ai déjà un compte FreeCovid</h1>
-      <v-form class="" ref="form" v-model="valid" lazy-validation>
+<template >
+  <v-container>
+     <v-card id="card" class="mx-auto mt-8" max-width="750">
+      <h1 class="uppercase text-center mb-8" id="text1">J'ai déjà un compte FreeCovid</h1>
+      <v-form  ref="form" v-model="valid" lazy-validation>
+        <v-container>
+          <v-row>
+            <v-col cols="12" md="6">
         <v-text-field
           prepend-icon="mdi-account"
           v-model="email"
@@ -10,6 +13,8 @@
           label="E-mail"
           required
         ></v-text-field>
+            </v-col>
+            <v-col cols="12" md="6">
         <v-text-field
           v-model="password"
           :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
@@ -23,7 +28,8 @@
           @click:append="show1 = !show1"
           required
         ></v-text-field>
-        <v-container class="pt-12">
+            </v-col>
+        <v-container class="pt-6 text-center">
         <v-btn
           :disabled="!valid"
           color="success" 
@@ -36,6 +42,8 @@
         <v-btn color="error" class="mr-4" @click="reset">
           Reset Form
         </v-btn>
+        </v-container>
+        </v-row>
         </v-container>
       </v-form>
     </v-card>
@@ -79,14 +87,5 @@ export default {
 </script>
 
 <style lang="stylus">
-#login {
-  margin-top: 8rem
-}
-#card {
-  padding: 4rem
-}
-#text1 {
-  font-family: 'Roboto', sans-serif;
-  color: #435f71;
-}
+
 </style>

@@ -2,7 +2,7 @@
   <v-app>
     <MyNavbar />
     <transition name="component-fade" mode="out-in">
-       <router-view class="mx-auto"/>
+       <router-view/>
     </transition>  
     <MyFooter />
   </v-app>

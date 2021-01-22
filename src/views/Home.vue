@@ -1,6 +1,6 @@
 <template>
   <div>
-    <HomeComponent />
+    <HomeComponent class="mx-auto" />
   </div>
 </template>
 

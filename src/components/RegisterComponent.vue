@@ -254,7 +254,7 @@ export default {
 }
 #card {
   margin-left: 2rem;
-  padding-left: 60px;
+  padding: 60px;
   margin-bottom: 9rem
 }
 .v-icon.v-icon {
@@ -263,5 +263,6 @@ export default {
 #text1 {
   font-family: 'Roboto', sans-serif;
   color: #435f71;
+  text-align: center
 }
 </style>
