@@ -29,7 +29,7 @@
               ></v-text-field>
             </v-col>
 
-            <v-col cols="12" md="8">
+            <v-col cols="12" md="6">
               <v-text-field
                 v-model="email"
                 :rules="emailRules"
@@ -38,7 +38,7 @@
                 prepend-icon="mdi-mail"
               ></v-text-field>
             </v-col>
-            <v-col cols="12" md="4">
+            <v-col cols="12" md="6">
               <v-menu
                 ref="menu"
                 v-model="menu"
@@ -68,7 +68,7 @@
                 ></v-date-picker>
               </v-menu>
             </v-col>
-            <v-col cols="12" md="4">
+            <v-col cols="12" md="6">
               <v-text-field
                 v-model="address"
                 :rules="adressRules"
@@ -77,7 +77,7 @@
                 required
               ></v-text-field>
             </v-col>
-            <v-col cols="12" md="4">
+            <v-col cols="12" md="6">
               <validation-provider
                 v-slot="{ errors }"
                 name="cp"
@@ -98,7 +98,7 @@
                 ></v-text-field>
               </validation-provider>
             </v-col>
-            <v-col cols="12" md="4">
+            <v-col cols="12" md="12">
               <validation-provider
                 v-slot="{ errors }"
                 name="phoneNumber"
@@ -261,7 +261,7 @@ export default {
       User.register(form)
         .then((response) => {
           this.$store.commit("LOGIN", true);
-          this.$cookies.set("accessToken", console.log(response.data));
+          this.$cookies.set("accessToken", response.data);
           this.$router.push({ name: "Home"});
         })
          .catch((error) => {
@@ -292,3 +292,4 @@ export default {
   text-align: center
 }
 </style>
+

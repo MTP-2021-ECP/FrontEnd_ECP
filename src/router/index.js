@@ -18,6 +18,7 @@ const routes = [
   { path: "/CovidCases", name: "CovidCases", component: CovidCases },
   { path: "/map", name: "map", component: Map },
   { path: "/calendrier", name: "calendrier", component: Calendrier, meta: { authOnly: true }},
+  
 ];
 
 const router = new VueRouter({
@@ -27,7 +28,7 @@ const router = new VueRouter({
 });
 
 function isLoggedIn() {
-  return localStorage.getItem("token");
+  return localStorage.getItem("accessToken");
 }
 
 router.beforeEach((to, from, next) => {

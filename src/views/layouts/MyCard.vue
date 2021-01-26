@@ -167,7 +167,7 @@
           <template v-slot:icon>
             <v-avatar>
               <img
-                src="https://media-exp1.licdn.com/dms/image/C4D35AQGPMjMsO66aSw/profile-framedphoto-shrink_200_200/0/1608037839691?e=1611262800&v=beta&t=_swwQy5RTMBA0hnVfxLSfdl25eZJaS0LFhIkgRDImUU"
+                src="https://media-exp1.licdn.com/dms/image/C4D35AQGPMjMsO66aSw/profile-framedphoto-shrink_200_200/0/1608037839691?e=1611756000&v=beta&t=t0ZPFl3GUpTaWqNPYEiLaXwD08U7MyeWarQDQIcEuic"
               />
             </v-avatar>
           </template>
@@ -220,7 +220,7 @@
           <template v-slot:icon>
             <v-avatar>
               <img
-                src="https://media-exp1.licdn.com/dms/image/C4D35AQH_vA-6bkGfdg/profile-framedphoto-shrink_200_200/0/1604514022374?e=1611421200&v=beta&t=CaO5lvik4U268XBBusNYijOPPsZZBGO_bp2il28js4g"
+                src="https://media-exp1.licdn.com/dms/image/C4D35AQH_vA-6bkGfdg/profile-framedphoto-shrink_200_200/0/1604514022374?e=1611756000&v=beta&t=JUwHQ8Wbsoo1nspsd3jS889Q-yezVePT8OQGhzaWyjw"
               />
             </v-avatar>
           </template>

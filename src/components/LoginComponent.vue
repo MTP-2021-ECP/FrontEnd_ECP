@@ -1,9 +1,7 @@
 <template>
   <v-container id="login">
-    <div class="container pt-6">
-      <h1 class="text-center">SE CONNECTER</h1>
-    </div>
-    <v-card id="card">
+    <v-card id="card" class="mx-auto mt-8" max-width="750"> 
+      <h1 class="uppercase text-center mb-8" id="text1">SE CONNECTER</h1>
       <v-form class="" ref="form" v-model="valid" lazy-validation>
         <v-text-field
           prepend-icon="mdi-account"
@@ -32,11 +30,11 @@
             class="mr-4"
             @click="validate"
           >
-            Validate
+            SE CONNECTER
           </v-btn>
 
           <v-btn color="error" class="mr-4" @click="reset">
-            Reset Form
+            CLEAR
           </v-btn>
         </v-container>
       </v-form>
