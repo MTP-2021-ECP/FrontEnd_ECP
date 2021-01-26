@@ -13,7 +13,7 @@ Vue.use(VueRouter);
 const routes = [
   { path: "/", name: "Home", component: Home },
   { path: "/contact", name: "about", component: Contact },
-  { path: "/login", name: "login", component: Login, meta:{ authOnly: true }},
+  { path: "/login", name: "login", component: Login, meta:{ guestOnly: true }},
   { path: "/register", name: "register", component: Register },
   { path: "/CovidCases", name: "CovidCases", component: CovidCases },
   { path: "/map", name: "map", component: Map },
