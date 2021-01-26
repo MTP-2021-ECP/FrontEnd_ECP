@@ -4,23 +4,24 @@
       <v-toolbar id="navbar" dark flat inset app width="auto">
         <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
         <v-spacer></v-spacer>
-        <router-link :to="{ name: 'login' }">
+        <router-link v-if="!isLoggedIn" :to="{ name: 'login' }">
           <v-btn class="ma-2" text icon>
-            <v-icon
-              class="ma-2 deep-white--text text--lighten-1"
-              router
+            <v-icon class="ma-2 deep-white--text text--lighten-1" router
               >mdi-account</v-icon
             >
           </v-btn>
         </router-link>
-        <router-link :to="{ name: 'register' }">
+        <v-btn class="ma-2" text icon v-if="isLoggedIn" @click.prevent="logout"
+          ><v-icon>mdi-exit-to-app </v-icon></v-btn
+        >
+        <router-link v-if="!isLoggedIn" :to="{ name: 'register' }">
           <v-btn class="ma-2" text icon>
             <v-icon class="ma-2 deep-white--text text--lighten-1"
               >mdi-account-plus</v-icon
             >
           </v-btn>
         </router-link>
-        <router-link :to="{ name: 'calendrier' }">
+        <router-link v-if="isLoggedIn" :to="{ name: 'calendrier' }">
           <v-btn class="ma-2" text icon>
             <v-icon class="ma-2 deep-white--text text--lighten-1"
               >mdi-calendar</v-icon
@@ -59,6 +60,10 @@
 </template>
 
 <script>
+/* eslint-disable */
+import { mapGetters } from "vuex";
+// import User from "/apis/User.js";
+
 export default {
   data() {
     return {
@@ -68,9 +73,18 @@ export default {
         { icon: "mdi-chart-box", text: "Stats COVID", route: "/CovidCases" },
         { icon: "mdi-map", text: "Rendez-vous", route: "/map" },
         { icon: "mdi-phone", text: "Contact", route: "/contact" },
-        { icon: "mdi-calendar", text: "Gérer mes RDV", route: "/calendrier" },
       ],
     };
+  },
+  computed: {
+    ...mapGetters(["isLoggedIn"]),
+  },
+  methods: {
+    logout() {
+      console.log(this.$cookies.remove("accessToken"));
+      this.$store.commit("LOGIN", false);
+      this.$router.push({ name: "Home" });
+    },
   },
 };
 </script>

@@ -7,7 +7,7 @@
           <v-list-item v-for="(liveStat, i) in liveStats" :key="i">
             <v-list-item-icon class="pr-12">
               <v-icon v-text="country">France</v-icon>
-                <v-list-item-title v-text="liveStat.Province"></v-list-item-title>
+              <v-list-item-title v-text="liveStat.Province"></v-list-item-title>
             </v-list-item-icon>
             <v-list-item-content
               ><span class="red--text">Active</span>
@@ -74,10 +74,13 @@
         <v-col cols="12" sm="6" md="8">
           <v-card class="pa-2">
             <h2 class="pt-3 text-center " id="text1">
-        Coronavirus (COVID-19) Chiffres clés, interviews d'experts, questions-réponses, outils de prévention...tout savoir sur le coronavirus (SARS-CoV-2), COVID-19, son évolution en France et dans le Monde, et l’action de Santé publique France 
+              Coronavirus (COVID-19) Chiffres clés, interviews d'experts,
+              questions-réponses, outils de prévention...tout savoir sur le
+              coronavirus (SARS-CoV-2), COVID-19, son évolution en France et
+              dans le Monde, et l’action de Santé publique France
             </h2>
             <p class="text-center" style="padding: 3.75rem;">
-            En semaine 01 (du 04 au 10 janvier 2021), les indicateurs
+              En semaine 01 (du 04 au 10 janvier 2021), les indicateurs
               épidémiologiques de suivi de l’épidémie de COVID-19 montraient une
               progression de la circulation du SARS-CoV-2 à un niveau élevé en
               France, suite aux rassemblements festifs de fin d’année. De plus,
@@ -99,7 +102,7 @@
         </v-col>
       </v-row>
     </v-container>
-        <v-container class="d-flex justify-start mb-6 pt-15">
+    <v-container class="d-flex justify-start mb-6 pt-15">
       <v-row class="mb-6" no-gutters>
         <v-col cols="6" md="4">
           <v-card class="pa-2">
@@ -143,6 +146,7 @@
 </template>
 
 <script>
+/* eslint-disable */
 export default {
   name: "Stats",
 

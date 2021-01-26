@@ -45,7 +45,7 @@
 </template>
 
 <script>
-// import axios from "axios";
+/* eslint-disable */
 import User from "../apis/User";
 
 export default {
@@ -88,7 +88,7 @@ export default {
       User.login(form)
         .then((response) => {
           this.$store.commit("LOGIN", true);
-          localStorage.setItem("accessToken", console.log(response.data));
+          this.$cookies.set("accessToken", response.data);
           this.$router.push({ name: "Home" });
         })
         .catch((error) => {

@@ -141,6 +141,7 @@
 </template>
 
 <script>
+/* eslint-disable */
 import { db } from '@/main'
 export default {
   data: () => ({

@@ -49,7 +49,7 @@
               >
                 <template v-slot:activator="{ on, attrs }">
                   <v-text-field
-                    v-model="birthday"
+                    v-model="dateOfBirth"
                     label="Birthday date"
                     prepend-icon="mdi-calendar"
                     readonly
@@ -61,7 +61,7 @@
                 </template>
                 <v-date-picker
                   ref="picker"
-                  v-model="birthday"
+                  v-model="dateOfBirth"
                   :max="new Date().toISOString().substr(0, 10)"
                   min="1950-01-01"
                   @change="save"
@@ -70,7 +70,7 @@
             </v-col>
             <v-col cols="12" md="4">
               <v-text-field
-                v-model="adresse"
+                v-model="address"
                 :rules="adressRules"
                 label="Adresse"
                 prepend-icon="mdi-city"
@@ -88,7 +88,7 @@
                 }"
               >
                 <v-text-field
-                  v-model="cp"
+                  v-model="zipCode"
                   :counter="5"
                   :error-messages="errors"
                   :rules="cpRules"
@@ -110,7 +110,7 @@
               >
                 <v-text-field
                   v-model="phoneNumber"
-                  :counter="5"
+                  :counter="10"
                   :error-messages="errors"
                   label="N° téléphone"
                   prepend-icon="mdi-phone"
@@ -171,6 +171,7 @@
 </template>
 
 <script>
+import User from "../apis/User";
 import { regex, digits } from "vee-validate/dist/rules";
 import { ValidationProvider, extend } from "vee-validate";
 
@@ -197,9 +198,9 @@ export default {
     firstname: "",
     lastname: "",
     email: "",
-    birthday: "",
-    adresse: "",
-    cp: "",
+    dateOfBirth: "",
+    address: "",
+    zipCode: "",
     phoneNumber: "",
     password: "",
     verify: "",
@@ -239,11 +240,36 @@ export default {
   }),
   methods: {
     validate() {
+      let form = {
+        firstname: this.firstname,
+        lastname: this.lastname,
+        email: this.email,
+        dateOfBirth: this.dateOfBirth,
+        address: this.address,
+        zipCode: this.zipCode,
+        phoneNumber: this.phoneNumber,
+        password: this.password,
+      };
+      this.handleRegister(form);
       this.$refs.form.validate();
     },
     reset() {
       this.$refs.form.reset();
     },
+
+    async handleRegister(form){
+      User.register(form)
+        .then((response) => {
+          this.$store.commit("LOGIN", true);
+          this.$cookies.set("accessToken", console.log(response.data));
+          this.$router.push({ name: "Home"});
+        })
+         .catch((error) => {
+          if (error.response.status === 422) {
+            this.errors = error.response.data.errors;
+          }
+        });
+    }
   },
 };
 </script>
