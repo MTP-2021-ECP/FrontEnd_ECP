@@ -1,11 +1,10 @@
-<template >
-  <v-container>
-     <v-card id="card" class="mx-auto mt-8" max-width="750">
-      <h1 class="uppercase text-center mb-8" id="text1">J'ai déjà un compte FreeCovid</h1>
-      <v-form  ref="form" v-model="valid" lazy-validation>
-        <v-container>
-          <v-row>
-            <v-col cols="12" md="6">
+<template>
+  <v-container id="login">
+    <div class="container pt-6">
+      <h1 class="text-center">SE CONNECTER</h1>
+    </div>
+    <v-card id="card">
+      <v-form class="" ref="form" v-model="valid" lazy-validation>
         <v-text-field
           prepend-icon="mdi-account"
           v-model="email"
@@ -13,8 +12,6 @@
           label="E-mail"
           required
         ></v-text-field>
-            </v-col>
-            <v-col cols="12" md="6">
         <v-text-field
           v-model="password"
           :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
@@ -28,22 +25,19 @@
           @click:append="show1 = !show1"
           required
         ></v-text-field>
-            </v-col>
-        <v-container class="pt-6 text-center">
-        <v-btn
-          :disabled="!valid"
-          color="success" 
-          class="mr-4"
-          @click="validate"
-        >
-          Validate
-        </v-btn>
+        <v-container class="pt-12">
+          <v-btn
+            :disabled="!valid"
+            color="success"
+            class="mr-4"
+            @click="validate"
+          >
+            Validate
+          </v-btn>
 
-        <v-btn color="error" class="mr-4" @click="reset">
-          Reset Form
-        </v-btn>
-        </v-container>
-        </v-row>
+          <v-btn color="error" class="mr-4" @click="reset">
+            Reset Form
+          </v-btn>
         </v-container>
       </v-form>
     </v-card>
@@ -51,6 +45,9 @@
 </template>
 
 <script>
+// import axios from "axios";
+import User from "../apis/User";
+
 export default {
   computed: {
     passwordMatch() {
@@ -60,10 +57,10 @@ export default {
   data: () => ({
     show1: false,
     valid: true,
-    name: "",
-    nameRules: [
-      (v) => !!v || "Name is required",
-      (v) => (v && v.length <= 10) || "Name must be less than 10 characters",
+    email: "",
+    emailRules: [
+      (v) => !!v || "E-mail is required",
+      (v) => /.+@.+/.test(v) || "E-mail must be valid",
     ],
     password: "",
     passwordRules: [
@@ -74,6 +71,11 @@ export default {
 
   methods: {
     validate() {
+      let form = {
+        email: this.email,
+        password: this.password,
+      };
+      this.handleLogin(form);
       this.$refs.form.validate();
     },
     reset() {
@@ -82,10 +84,28 @@ export default {
     resetValidation() {
       this.$refs.form.resetValidation();
     },
+    async handleLogin(form) {
+      User.login(form)
+        .then((response) => {
+          this.$store.commit("LOGIN", true);
+          localStorage.setItem("accessToken", console.log(response.data));
+          this.$router.push({ name: "Home" });
+        })
+        .catch((error) => {
+          if (error.response.status === 422) {
+            this.errors = error.response.data.errors;
+          }
+        });
+    },
   },
 };
 </script>
 
 <style lang="stylus">
-
+#login {
+  margin-top: 8rem
+}
+#card {
+  padding: 4rem
+}
 </style>

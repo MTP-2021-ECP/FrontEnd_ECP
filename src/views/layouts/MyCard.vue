@@ -220,7 +220,7 @@
           <template v-slot:icon>
             <v-avatar>
               <img
-                src="https://media-exp1.licdn.com/dms/image/C4D35AQH_vA-6bkGfdg/profile-framedphoto-shrink_200_200/0/1604514022374?e=1611262800&v=beta&t=uCDFbw8AU6NmYrm8OnrYqNy-IX24WgmJmLPe6ukJlsk"
+                src="https://media-exp1.licdn.com/dms/image/C4D35AQH_vA-6bkGfdg/profile-framedphoto-shrink_200_200/0/1604514022374?e=1611421200&v=beta&t=CaO5lvik4U268XBBusNYijOPPsZZBGO_bp2il28js4g"
               />
             </v-avatar>
           </template>

@@ -1,11 +1,8 @@
 <template>
   <v-container>
-    <v-container>
-      <h1 id="text1">RENDEZ VOUS</h1>
-    </v-container>
-    <v-row justify="mt-12" style="min-height: 160px;">
+    <v-row justify="mt-12 pt-15" class="justify-lg-center" style="min-height: 160px;">
       <v-col md="5">
-        <v-card class="pa-2" outlined elevation="2" shaped>
+        <v-card class="pa-2 justify-lg-center">
           <GmapMap
             :center="myCoordinates"
             :zoom="zoom"
@@ -15,7 +12,7 @@
           ></GmapMap>
         </v-card>
       </v-col>
-      <v-col class="shrink mr-12" md="6" id="card3">
+      <v-col class="mr-12" md="6" id="card3">
         <v-container class="container text-center">
           <v-btn
             class="ma-2 mt-6"
@@ -65,8 +62,8 @@
                       {{ place.vicinity }}
                     </v-list-item-subtitle>
                     <v-list-item-subtitle class="text-right mb-12">
-                      <v-btn class="deep-orange lighten-1"
-                        >Prendre rendez vous</v-btn
+                      <v-btn color="orange" outlined rounded
+                        ><v-hover>Prendre rendez-vous</v-hover></v-btn
                       >
                     </v-list-item-subtitle>
                     <v-divider class="pt-4"></v-divider>
@@ -83,25 +80,32 @@
         <v-timeline-item color="purple lighten-2" fill-dot right>
           <v-card class="mx-auto">
             <v-card-title class="purple lighten-2" id="navbar">
-              <v-icon dark size="42" class="mr-4">
-                mdi-magnify
-              </v-icon>
-              <h2 class="display-1 white--text font-weight-light">
-                Title 1
-              </h2>
+              <v-container class="justify-lg-center">
+                <h2 class="text-center display-1 white--text font-weight-light">
+                  <v-icon dark size="42" class="mr-4"> mdi-magnify </v-icon
+                  >Title 1
+                </h2>
+              </v-container>
             </v-card-title>
             <v-container>
-              <v-row>
+              <v-row class="justify-lg-center">
                 <v-col cols="12" md="10">
-                  <v-img
-                    src="https://www.doctolib.fr/webpack/3713f422bb9dbe5213c25b7435c6356b.png"
-                    height="250px"
-                    width="800px"
-                  ></v-img>
-                  <p class="text-center pt-5" id="text1">
-                    Libérez du temps médical grâce à la prise de rendez-vous en
-                    ligne et un logiciel moderne
-                  </p>
+                  <v-container>
+                    <v-img
+                      src="https://www.doctolib.fr/webpack/3713f422bb9dbe5213c25b7435c6356b.png"
+                      height="250px"
+                      width="800px"
+                    ></v-img>
+                    <p class="text-center pt-5" id="text1">
+                      Libérez du temps médical grâce à la prise de rendez-vous
+                      en ligne et un logiciel moderne Libérez du temps médical
+                      grâce à la prise de rendez-vous en ligne et un logiciel
+                      moderne Libérez du temps médical grâce à la prise de
+                      rendez-vous en ligne et un logiciel moderne Libérez du
+                      temps médical grâce à la prise de rendez-vous en ligne et
+                      un logiciel moderne
+                    </p>
+                  </v-container>
                 </v-col>
               </v-row>
             </v-container>
@@ -111,27 +115,28 @@
         <v-timeline-item color="amber lighten-1" fill-dot left small>
           <v-card>
             <v-card-title class="amber lighten-1 justify-end" id="navbar1">
-              <h2 class="display-1 mr-4 white--text font-weight-light">
-                Title 2
-              </h2>
-              <v-icon dark size="42">
-                mdi-home-outline
-              </v-icon>
+              <v-container class="justify-lg-center">
+                <h2 class="text-center display-1 white--text font-weight-light">
+                  <v-icon size="64">
+                    mdi-calendar-text
+                  </v-icon>
+                  Title 1
+                </h2>
+              </v-container>
             </v-card-title>
             <v-container>
-              <v-row>
+              <v-row class="justify-lg-center">
                 <v-col cols="12" md="10">
                   <v-img
                     src="https://www.doctolib.fr/webpack/d3c702f77b131e3923c93351634acb23.png"
                     height="250px"
                     width="800px"
                   ></v-img>
-                  Lorem ipsum dolor sit amet, no nam oblique veritus. Commune
-                  scaevola imperdiet nec ut, sed euismod convenire principes at.
-                  Est et nobis iisque percipit.
-                </v-col>
-                <v-col cols="12" md="10">
-                  Lorem ipsum dolor sit amet, no nam oblique veritus.
+                  <p class="text-center pt-5" id="text1">
+                    Lorem ipsum dolor sit amet, no nam oblique veritus. Commune
+                    scaevola imperdiet nec ut, sed euismod convenire principes
+                    at. Est et nobis iisque percipit.
+                  </p>
                 </v-col>
               </v-row>
             </v-container>
@@ -141,23 +146,25 @@
         <v-timeline-item color="cyan lighten-1" fill-dot right>
           <v-card>
             <v-card-title class="cyan lighten-1" id="navbar">
-              <v-icon class="mr-4" dark size="42">
-                mdi-email-outline
-              </v-icon>
-              <h2 class="display-1 white--text font-weight-light">
-                Title 3
-              </h2>
+              <v-container class="justify-lg-center">
+                <h2 class="text-center display-1 white--text font-weight-light">
+                  <v-icon dark size="42" class="mr-4"> mdi-phone </v-icon>Title
+                  1
+                </h2>
+              </v-container>
             </v-card-title>
             <v-container>
-              <v-row>
+              <v-row class="justify-lg-center">
                 <v-col cols="12" md="10">
                   <v-img
                     src="https://www.doctolib.fr/webpack/cbd6d813afcb1456ee026d27c9335288.png"
                     height="200px"
                     width="800px"
                   ></v-img>
-                  Lorem ipsum dolor sit amet, no nam oblique veritus no nam
-                  oblique.
+                  <p class="text-center pt-5" id="text1">
+                    Lorem ipsum dolor sit amet, no nam oblique veritus no nam
+                    oblique.
+                  </p>
                 </v-col>
               </v-row>
             </v-container>
@@ -167,15 +174,16 @@
         <v-timeline-item color="red lighten-1" fill-dot left small>
           <v-card>
             <v-card-title class="red lighten-1 justify-end" id="navbar1">
-              <h2 class="display-1 mr-4 white--text font-weight-light">
-                Title 4
-              </h2>
-              <v-icon dark size="42">
-                mdi-account-multiple-outline
-              </v-icon>
+              <v-container class="justify-lg-center">
+                <h2 class="text-center display-1 white--text font-weight-light">
+                  <v-icon dark size="42" class="mr-4">
+                    mdi-email-outline </v-icon
+                  >Title 1
+                </h2>
+              </v-container>
             </v-card-title>
             <v-container>
-              <v-row>
+              <v-row class="justify-lg-center">
                 <v-col class="hidden-sm-and-down" cols="12" md="10">
                   <v-img
                     src="https://www.doctolib.fr/webpack/eb06b2b2a48c6fb351ae8ed3eaa14fda.png"
@@ -184,10 +192,12 @@
                   ></v-img>
                 </v-col>
                 <v-col cols="12" md="10">
-                  Lorem ipsum dolor sit amet, no nam oblique veritus. Commune
-                  scaevola imperdiet nec ut, sed euismod convenire principes at.
-                  Est et nobis iisque percipit, an vim zril disputando
-                  voluptatibus.
+                  <p class="text-center pt-5" id="text1">
+                    Lorem ipsum dolor sit amet, no nam oblique veritus. Commune
+                    scaevola imperdiet nec ut, sed euismod convenire principes
+                    at. Est et nobis iisque percipit, an vim zril disputando
+                    voluptatibus.
+                  </p>
                 </v-col>
               </v-row>
             </v-container>
@@ -196,25 +206,27 @@
         <v-timeline-item color="green lighten-1" fill-dot right>
           <v-card>
             <v-card-title class="green lighten-1" id="navbar">
-              <v-icon class="mr-4" dark size="42">
-                mdi-phone-in-talk
-              </v-icon>
-              <h2 class="display-1 white--text font-weight-light">
-                Title 5
-              </h2>
+              <v-container class="justify-lg-center">
+                <h2 class="text-center display-1 white--text font-weight-light">
+                  <v-icon dark size="42" class="mr-4"> mdi-magnify </v-icon
+                  >Title 1
+                </h2>
+              </v-container>
             </v-card-title>
             <v-container>
-              <v-row>
+              <v-row class="justify-lg-center">
                 <v-col cols="12" md="10">
                   <v-img
                     src="https://www.doctolib.fr/webpack/242884fdb7eb9359106cfc5d4ba33576.png"
                     height="200px"
                     width="800px"
                   ></v-img>
-                  Lorem ipsum dolor sit amet, no nam oblique veritus. Commune
-                  scaevola imperdiet nec ut, sed euismod convenire principes at.
-                  Est et nobis iisque percipit, an vim zril disputando
-                  voluptatibus, vix an salutandi sententiae.
+                  <p class="text-center pt-5" id="text1">
+                    Lorem ipsum dolor sit amet, no nam oblique veritus. Commune
+                    scaevola imperdiet nec ut, sed euismod convenire principes
+                    at. Est et nobis iisque percipit, an vim zril disputando
+                    voluptatibus, vix an salutandi sententiae.
+                  </p>
                 </v-col>
               </v-row>
             </v-container>
@@ -231,6 +243,7 @@
   </v-container>
 </template>
 <script>
+/* eslint-disable */
 import axios from "axios";
 export default {
   name: "MapComponent",

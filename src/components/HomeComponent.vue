@@ -92,7 +92,7 @@
         </v-card-actions>
       </v-img>
     </v-card>
-    <MyCard/>
+    <MyCard />
     <br />
     <br />
     <br />
@@ -106,20 +106,20 @@
 </template>
 
 <script>
-import MyCard from '../views/layouts/MyCard'
+import MyCard from "../views/layouts/MyCard";
 
 export default {
   name: "HelloWorld",
   components: {
-    MyCard,
+    MyCard
   },
-   data: () => ({}),
+  data: () => ({})
 };
 </script>
 
 <style lang="stylus">
 #row {
-  padding-top: 4rem;
+  padding-top: 10rem;
   justify-content: center;
 }
 #parallax {
