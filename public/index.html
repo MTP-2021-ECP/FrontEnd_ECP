@@ -32,24 +32,40 @@
     <!-- built files will be auto injected -->
   </body>
   <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+  
   <script>
     var BotStar = {
       appId: "s09aaaa55-9ad2-41df-a560-7328db2fda58",
       mode: "livechat",
+      user: {
+        user_id: "1b80c408-0e11-46f6-8b0a-7c7022338d29",
+        email: "",
+        first_name: "",
+        last_name: "",
+        another_attribute: "New value",
+      },
     };
-    !(function(t, a) {
-      var e = function() {
-        (e.q = e.q || []).push(arguments);
-      };
-      (e.q = e.q || []), (t.BotStarApi = e);
-      !(function() {
-        var t = a.createElement("script");
-        (t.type = "text/javascript"),
-          (t.async = 1),
-          (t.src = "https://widget.botstar.com/static/js/widget.js");
-        var e = a.getElementsByTagName("script")[0];
-        e.parentNode.insertBefore(t, e);
-      })();
-    })(window, document);
+    // !(function(t, a) {
+    //   var e = function() {
+    //     (e.q = e.q || []).push(arguments);
+    //   };
+    //   (e.q = e.q || []), (t.BotStarApi = e);
+    //   var n = function() {
+    //     var t = a.createElement("script");
+    //     (t.type = "text/javascript"),
+    //       (t.async = !0),
+    //       (t.src = "https://widget.botstar.com/embed/bundle.js");
+    //     var e = a.getElementsByTagName("script")[0];
+    //     e.parentNode.insertBefore(t, e);
+    //   };
+    //   t.attachEvent
+    //     ? t.attachEvent("onload", n)
+    //     : t.addEventListener("load", n, !1);
+    // })(window, document);
+
+    var new_botstar_settings = {
+      appId: "s09aaaa55-9ad2-41df-a560-7328db2fda58",
+    };
+    
   </script>
 </html>

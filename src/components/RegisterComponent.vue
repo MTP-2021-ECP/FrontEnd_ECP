@@ -9,7 +9,7 @@
           <v-row>
             <v-col cols="12" md="6">
               <v-text-field
-                v-model="firstname"
+                v-model="lastname"
                 :rules="nameRules"
                 :counter="10"
                 label="Nom"
@@ -20,7 +20,7 @@
 
             <v-col cols="12" md="6">
               <v-text-field
-                v-model="lastname"
+                v-model="firstname"
                 :rules="nameRules"
                 :counter="10"
                 label="Prenom"
@@ -193,7 +193,7 @@ export default {
     ValidationProvider,
   },
   data: () => ({
-    valid: true,
+    valid: false,
     firstname: "",
     lastname: "",
     email: "",
@@ -237,8 +237,10 @@ export default {
       (v) => v.length <= 10 || "adresse non valide",
     ],
   }),
+
   methods: {
     validate() {
+      console.log(this.lastname)
       this.$refs.form.validate();
     },
     reset() {
@@ -246,6 +248,7 @@ export default {
     },
   },
 };
+
 </script>
 
 <style lang="stylus">
