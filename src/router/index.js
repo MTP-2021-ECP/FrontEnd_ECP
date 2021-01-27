@@ -7,18 +7,19 @@ import Register from "../views/Register.vue";
 import CovidCases from "../views/CovidCases.vue";
 import Map from "../views/Map.vue";
 import Calendrier from "../views/Calendrier.vue";
+import Dashboard from '../views/Dashboard.vue'
 
 Vue.use(VueRouter);
 
 const routes = [
   { path: "/", name: "Home", component: Home },
   { path: "/contact", name: "about", component: Contact },
-  { path: "/login", name: "login", component: Login, meta: { authOnly: true }},
+  { path: "/login", name: "login", component: Login,meta: { guestOnly: true }},
   { path: "/register", name: "register", component: Register },
   { path: "/CovidCases", name: "CovidCases", component: CovidCases },
   { path: "/map", name: "map", component: Map },
-  { path: "/calendrier", name: "calendrier", component: Calendrier, meta: { authOnly: true }},
-  
+  { path: "/calendrier", name: "calendrier", component: Calendrier, meta: { guestOnly: true }},
+  { path: "/dashboard", name: "dashboard", component: Dashboard, meta: { authOnly: true } }
 ];
 
 const router = new VueRouter({
@@ -28,7 +29,7 @@ const router = new VueRouter({
 });
 
 function isLoggedIn() {
-  return localStorage.getItem("accessToken");
+  return window.$cookies.get("accessToken");
 }
 
 router.beforeEach((to, from, next) => {

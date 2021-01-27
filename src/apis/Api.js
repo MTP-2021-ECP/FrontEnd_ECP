@@ -5,7 +5,7 @@ let BaseApi = axios.create({
 });
 
 let Api = function() {
-  let token = localStorage.getItem("accessToken");
+  let token = window.$cookies.get("accessToken");
 
   if (token) {
     BaseApi.defaults.headers.common["Authorization"] = `Bearer ${token}`;

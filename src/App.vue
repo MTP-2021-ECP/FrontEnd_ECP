@@ -24,7 +24,7 @@ export default {
     //
   }),
   mounted() {
-    this.$store.commit("LOGIN", !!localStorage.getItem("token"));
+    this.$store.commit("LOGIN", !!this.$cookies.get("accessToken"));
   },
 };
 </script>

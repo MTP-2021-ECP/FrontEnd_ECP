@@ -87,7 +87,7 @@ export default {
         .then((response) => {
           this.$store.commit("LOGIN", true);
           this.$cookies.set("accessToken", response.data);
-          this.$router.push({ name: "Home" });
+          this.$router.push({ name: "dashboard" });
         })
         .catch((error) => {
           if (error.response.status === 422) {
