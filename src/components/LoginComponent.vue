@@ -1,6 +1,6 @@
 <template>
   <v-container id="login">
-    <v-card id="card" class="mx-auto mt-8" max-width="750"> 
+    <v-card id="card" class="mx-auto mt-8" max-width="750">
       <h1 class="uppercase text-center mb-8" id="text1">SE CONNECTER</h1>
       <v-form class="" ref="form" v-model="valid" lazy-validation>
         <v-text-field
@@ -32,10 +32,12 @@
           >
             SE CONNECTER
           </v-btn>
-
-          <v-btn color="error" class="mr-4" @click="reset">
+            <v-btn color="primary" class="mr-4" @click="reset">
             CLEAR
           </v-btn>
+          <button color="error" class="mr-4" @click="AuthProvider('google')">
+            <v-icon>mdi-google-plus</v-icon>
+          </button>
         </v-container>
       </v-form>
     </v-card>
@@ -93,6 +95,29 @@ export default {
           if (error.response.status === 422) {
             this.errors = error.response.data.errors;
           }
+        });
+    },
+    AuthProvider(provider) {
+      var self = this;
+
+      this.$auth
+        .authenticate(provider)
+        .then((response) => {
+          self.SocialLogin(provider, response);
+        })
+        .catch((err) => {
+          console.log({ err: err });
+        });
+    },
+
+    SocialLogin(provider, response) {
+      this.$http
+        .post("/sociallogin/" + provider, response)
+        .then((response) => {
+          console.log(response.data);
+        })
+        .catch((err) => {
+          console.log({ err: err });
         });
     },
   },

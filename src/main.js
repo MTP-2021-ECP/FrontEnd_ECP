@@ -7,6 +7,7 @@ import axios from "axios";
 import VueAxios from "vue-axios";
 import VueGeolocation from "vue-browser-geolocation";
 import VueCookies from "vue-cookies";
+import VueSocialauth from 'vue-social-auth'
 /* eslint-disable */
 Vue.use(VueCookies);
 Vue.use(VueAxios, axios);
@@ -21,6 +22,15 @@ import * as VueGoogleMaps from "vue2-google-maps";
 Vue.use(VueGoogleMaps, {
   load: {
     key: "AIzaSyDxTV3a6oL6vAaRookXxpiJhynuUpSccjY",
+  },
+});
+Vue.use(VueSocialauth, {
+  providers: {
+    google: {
+      clientId:
+        "766753341061-g0u5d45aj8k41uauv940kgg158uvhc92.apps.googleusercontent.com",
+      redirectUri: "http://localhost:8080/login/google/callback", // Your client app URL
+    },
   },
 });
 

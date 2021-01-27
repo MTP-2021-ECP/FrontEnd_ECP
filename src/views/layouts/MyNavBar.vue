@@ -28,6 +28,13 @@
             >
           </v-btn>
         </router-link>
+                <router-link v-if="isLoggedIn" :to="{ name: 'dashboard' }">
+          <v-btn class="ma-2" text icon>
+            <v-icon class="ma-2 deep-white--text text--lighten-1"
+              >mdi-view-dashboard</v-icon
+            >
+          </v-btn>
+        </router-link>
       </v-toolbar>
     </v-card>
     <v-navigation-drawer v-model="drawer" absolute temporary>

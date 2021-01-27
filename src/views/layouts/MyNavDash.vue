@@ -1,14 +1,13 @@
 <template>
- <div class="d-flex">
-    <v-navigation-drawer class="justify-end" permanent     height="800"
-    width="256">
+  <v-container class="flex">
+    <v-navigation-drawer permanent height="800" width="256">
       <v-list-item>
         <v-list-item-content>
           <v-list-item-title class="title">
             Mon Compte
           </v-list-item-title>
           <v-list-item-subtitle>
-          {{ user.lastname }}
+            {{ user.lastname }}
           </v-list-item-subtitle>
         </v-list-item-content>
       </v-list-item>
@@ -16,10 +15,12 @@
       <v-divider></v-divider>
 
       <v-list dense nav>
-        <v-list-item         v-for="item in items"
+        <v-list-item
+          v-for="item in items"
           :key="item.title"
           router
-          :to="item.route">
+          :to="item.route"
+        >
           <v-list-item-icon>
             <v-icon>{{ item.icon }}</v-icon>
           </v-list-item-icon>
@@ -30,19 +31,10 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-card class="mx-auto" width="600px" height="500px">
-      <h1 class="text-center pt-12">Bienvenue {{ user.lastname }}</h1>
-      <p class="text-center">{{user.dateOfBirth}}</p>
-      <p class="text-center">{{user.zipCode}}</p>
-      <p class="text-center">{{user.address}}</p>
-      <p class="text-center">{{user.phoneNumber}}</p>
-      <p class="text-center">{{user.email}}</p>
-      <v-container class="text-center">
-      <v-btn class="error mr-6">Supprimer</v-btn>
-      <v-btn class="success">Modifier</v-btn>
-      </v-container>
-    </v-card>
-</div>    
+    <v-container class="text-center">
+      <h1>SALUT</h1>
+    </v-container>
+  </v-container>
 </template>
 
 <script>
@@ -53,8 +45,8 @@ export default {
   data() {
     return {
       items: [
-        { title: "Gérer mon compte", icon: "mdi-view-dashboard", route: "/"  },
-        { title: "Mes rendez-vous", icon: "mdi-calendar", route: "/calendrier" },
+        { title: "Gérer mon compte", icon: "mdi-view-dashboard", route: "/" },
+        { title: "Mes rendez-vous", icon: "mdi-calendar" },
         { title: "Supprimer mon compte", icon: "mdi-cancel" },
       ],
       right: null,

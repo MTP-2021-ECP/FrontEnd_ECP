@@ -19,7 +19,9 @@ const routes = [
   { path: "/CovidCases", name: "CovidCases", component: CovidCases },
   { path: "/map", name: "map", component: Map },
   { path: "/calendrier", name: "calendrier", component: Calendrier, meta: { authOnly: true }},
-  { path: "/dashboard", name: "dashboard", component: Dashboard, meta: { authOnly: true } }
+  { path: "/dashboard", name: "dashboard", component: Dashboard, meta: { authOnly: true } },
+  { path: '/auth/:provider/callback', component: { template: '<div class="auth-component"></div>' }
+  },
 ];
 
 const router = new VueRouter({
