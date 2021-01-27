@@ -18,7 +18,7 @@ const routes = [
   { path: "/register", name: "register", component: Register },
   { path: "/CovidCases", name: "CovidCases", component: CovidCases },
   { path: "/map", name: "map", component: Map },
-  { path: "/calendrier", name: "calendrier", component: Calendrier, meta: { guestOnly: true }},
+  { path: "/calendrier", name: "calendrier", component: Calendrier, meta: { authOnly: true }},
   { path: "/dashboard", name: "dashboard", component: Dashboard, meta: { authOnly: true } }
 ];
 
