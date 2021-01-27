@@ -36,6 +36,7 @@
         <v-btn color="error" class="mr-4" @click="reset">
           Reset Form
         </v-btn>
+        <button @click="AuthProvider('google')">auth Google</button>
         </v-container>
       </v-form>
     </v-card>
@@ -74,6 +75,21 @@ export default {
     resetValidation() {
       this.$refs.form.resetValidation();
     },
+    AuthProvider(provider) {
+            
+    var self = this
+              
+    this.$auth.authenticate(provider).then(response =>{
+    self.SocialLogin(provider,response)}).catch(err => {
+    console.log({err:err})
+  })},
+
+  SocialLogin(provider,response)
+  {                
+    this.$http.post('/sociallogin/'+provider,response).then(response => {                    
+    console.log(response.data)}).catch(err => {
+                    console.log({err:err})})
+  },
   },
 };
 </script>

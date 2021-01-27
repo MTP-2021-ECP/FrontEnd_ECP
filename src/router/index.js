@@ -16,6 +16,12 @@ const routes = [
   { path: "/register", name: "register", component: Register},
   { path: "/CovidCases", name: "CovidCases", component: CovidCases},
   { path: "/map", name: "map", component: Map},
+  {
+    path: '/auth/:provider/callback',
+    component: {
+      template: '<div class="auth-component"></div>'
+    }
+  },
 
 ];
 
