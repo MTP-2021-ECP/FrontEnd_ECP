@@ -1,16 +1,16 @@
 <template>
   <div>
-    <DashboardComponent/>
+    <DeleteAccount />
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import DashboardComponent from '@/components/DashboardComponent.vue'
+import DeleteAccount from "@/components/DeleteAccountComponent.vue";
 
 export default {
   components: {
-   DashboardComponent
+    DeleteAccount,
   },
 };
 </script>

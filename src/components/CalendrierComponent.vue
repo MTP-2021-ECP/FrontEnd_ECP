@@ -1,7 +1,7 @@
 <template>
-  <v-row class="fill-height">
+  <v-row class="fill-height pt-12">
     <v-col>
-      <v-sheet height="64">
+      <v-sheet height="64" >
         <v-toolbar flat color="white">
           <v-btn color="primary" dark @click.stop="dialog = true">
             Demande de rendez-vous
@@ -143,7 +143,10 @@
 <script>
 /* eslint-disable */
 import { db } from '@/main'
+
+
 export default {
+
   data: () => ({
     today: new Date().toISOString().substr(0, 10),
     focus: new Date().toISOString().substr(0, 10),

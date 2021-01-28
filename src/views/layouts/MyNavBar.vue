@@ -28,13 +28,37 @@
             >
           </v-btn>
         </router-link>
-                <router-link v-if="isLoggedIn" :to="{ name: 'dashboard' }">
-          <v-btn class="ma-2" text icon>
-            <v-icon class="ma-2 deep-white--text text--lighten-1"
-              >mdi-view-dashboard</v-icon
-            >
-          </v-btn>
-        </router-link>
+        <v-menu v-if="isLoggedIn" bottom offset-y>
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn color="white" rounded text v-bind="attrs" v-on="on">
+              <v-icon class="ma-2 deep-white--text text--lighten-1"
+                >mdi-view-dashboard</v-icon
+              >
+              Mon compte
+            </v-btn>
+          </template>
+          <v-list class="grey lighten-3">
+            <v-list-item>
+              <v-list-item-title class="text-center">
+                <v-btn rounded text block color="orange" v-bind="attrs" v-on="on" :to="{ name: 'dashboard' }"
+                  >Gérer mon compte</v-btn
+                >
+              </v-list-item-title>
+            </v-list-item>
+            <v-list-item>
+              <v-list-item-title class="text-center">
+                <v-btn rounded text color="orange" v-bind="attrs" v-on="on" :to="{ name: 'calendrier' }"
+                  >Mes rendez-vous</v-btn
+                >
+              </v-list-item-title>
+            </v-list-item>
+            <v-list-item>
+              <v-list-item-title class="text-center">
+                <v-btn rounded text color="orange" v-bind="attrs" v-on="on" :to="{ name: 'deleteaccount'}">Supprimer mon compte</v-btn>
+              </v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-menu>
       </v-toolbar>
     </v-card>
     <v-navigation-drawer v-model="drawer" absolute temporary>

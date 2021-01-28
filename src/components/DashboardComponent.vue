@@ -1,35 +1,5 @@
 <template>
- <div class="d-flex">
-    <v-navigation-drawer class="justify-end" permanent     height="800"
-    width="256">
-      <v-list-item>
-        <v-list-item-content>
-          <v-list-item-title class="title">
-            Mon Compte
-          </v-list-item-title>
-          <v-list-item-subtitle>
-          {{ user.lastname }}
-          </v-list-item-subtitle>
-        </v-list-item-content>
-      </v-list-item>
-
-      <v-divider></v-divider>
-
-      <v-list dense nav>
-        <v-list-item         v-for="item in items"
-          :key="item.title"
-          router
-          :to="item.route">
-          <v-list-item-icon>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-icon>
-
-          <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
+ <div class="d-flex pt-12">
     <v-card class="mx-auto" width="600px" height="500px">
       <h1 class="text-center pt-12">Bienvenue {{ user.lastname }}</h1>
       <p class="text-center">{{user.dateOfBirth}}</p>
@@ -54,7 +24,7 @@ export default {
     return {
       items: [
         { title: "Gérer mon compte", icon: "mdi-view-dashboard", route: "/"  },
-        { title: "Mes rendez-vous", icon: "mdi-calendar", route: "/calendrier" },
+        { title: "Mes rendez-vous", icon: "mdi-calendar"  },
         { title: "Supprimer mon compte", icon: "mdi-cancel" },
       ],
       right: null,

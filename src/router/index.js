@@ -8,6 +8,7 @@ import CovidCases from "../views/CovidCases.vue";
 import Map from "../views/Map.vue";
 import Calendrier from "../views/Calendrier.vue";
 import Dashboard from '../views/Dashboard.vue'
+import DeleteAccount from '../views/DeleteAccount.vue'
 
 Vue.use(VueRouter);
 
@@ -20,6 +21,7 @@ const routes = [
   { path: "/map", name: "map", component: Map },
   { path: "/calendrier", name: "calendrier", component: Calendrier, meta: { authOnly: true }},
   { path: "/dashboard", name: "dashboard", component: Dashboard, meta: { authOnly: true } },
+  { path: "/deleteaccount", name: "deleteaccount", component: DeleteAccount },
   { path: '/auth/:provider/callback', component: { template: '<div class="auth-component"></div>' }
   },
 ];
