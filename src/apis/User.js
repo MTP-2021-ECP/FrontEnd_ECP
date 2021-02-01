@@ -14,6 +14,6 @@ export default {
   },
 
   auth() {
-    return Api().get("/user/2");
+    return Api().get(`/user`);
   }
 };
