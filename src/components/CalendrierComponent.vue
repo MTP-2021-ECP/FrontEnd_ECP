@@ -142,8 +142,6 @@
 
 <script>
 /* eslint-disable */
-import { db } from '@/main'
-
 
 export default {
 
