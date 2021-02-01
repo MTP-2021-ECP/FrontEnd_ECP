@@ -4,11 +4,17 @@
       <v-toolbar id="navbar" dark flat inset fixed-header width="auto">
         <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
         <v-spacer></v-spacer>
-          <v-btn class="ma-2" text icon v-if="!isLoggedIn" :to="{ name: 'login' }">
-            <v-icon class="ma-2 deep-white--text text--lighten-1" router
-              >mdi-account</v-icon
-            >
-          </v-btn>
+        <v-btn
+          class="ma-2"
+          text
+          icon
+          v-if="!isLoggedIn"
+          :to="{ name: 'login' }"
+        >
+          <v-icon class="ma-2 deep-white--text text--lighten-1" router
+            >mdi-account</v-icon
+          >
+        </v-btn>
         <v-tooltip v-if="isLoggedIn" bottom>
           <template v-slot:activator="{ on, attrs }">
             <v-btn
@@ -23,11 +29,17 @@
           </template>
           <span>Se déconnecter</span>
         </v-tooltip>
-          <v-btn class="ma-2" text icon v-if="!isLoggedIn" :to="{ name: 'register' }">
-            <v-icon class="ma-2 deep-white--text text--lighten-1"
-              >mdi-account-plus</v-icon
-            >
-          </v-btn>
+        <v-btn
+          class="ma-2"
+          text
+          icon
+          v-if="!isLoggedIn"
+          :to="{ name: 'register' }"
+        >
+          <v-icon class="ma-2 deep-white--text text--lighten-1"
+            >mdi-account-plus</v-icon
+          >
+        </v-btn>
         <v-menu v-if="isLoggedIn" bottom offset-y>
           <template v-slot:activator="{ on, attrs }">
             <v-btn color="white" rounded text v-bind="attrs" v-on="on">
@@ -52,11 +64,7 @@
             </v-list-item>
             <v-list-item>
               <v-list-item-title class="text-center">
-                <v-btn
-                  rounded
-                  text
-                  color="orange"
-                  :to="{ name: 'calendrier' }"
+                <v-btn rounded text color="orange" :to="{ name: 'calendrier' }"
                   >Mes rendez-vous</v-btn
                 >
               </v-list-item-title>

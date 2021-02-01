@@ -57,22 +57,22 @@ export default {
       items: [
         { title: "Gérer mon compte", icon: "mdi-view-dashboard", route: "/" },
         { title: "Mes rendez-vous", icon: "mdi-calendar" },
-        { title: "Supprimer mon compte", icon: "mdi-cancel" },
+        { title: "Supprimer mon compte", icon: "mdi-cancel" }
       ],
-      pId: "",
+      pId: ""
     };
   },
   computed: {
     ...mapState({
       user: (state) => state.auth.user,
-    }),
+    })
   },
 
   mounted() {
     User.auth().then((response) => {
-      console.log(response.data)
+      console.log(response.data);
       this.$store.commit("AUTH_USER", response.data);
     });
-  },
+  }
 };
 </script>
