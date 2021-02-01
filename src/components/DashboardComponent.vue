@@ -2,7 +2,7 @@
   <v-container>
     <h1 class="text1 text-center pt-12">GESTION DU COMPTE</h1>
     <div class="d-flex pt-12">
-      <v-card v-if="user" class="mx-auto" width="600px" height="500px">
+      <v-card class="mx-auto" width="600px" height="500px">
         <h1 class="text-center pt-12">Bienvenue {{ user.lastname }}</h1>
         <p class="text-center">{{ user.dateOfBirth }}</p>
         <p class="text-center">{{ user.zipCode }}</p>
