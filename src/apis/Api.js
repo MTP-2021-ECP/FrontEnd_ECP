@@ -1,7 +1,7 @@
 import axios from "axios";
 
 let BaseApi = axios.create({
-  baseURL: "https://free-covid-epitech.herokuapp.com/api/"
+  baseURL: "https://free-covid-epitech.herokuapp.com/"
 });
 
 let Api = function() {
