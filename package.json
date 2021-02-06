@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@prettier/plugin-pug": "^1.13.2",
+    "@vue/cli": "^4.5.11",
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "vee-validate": "^3.4.5",
