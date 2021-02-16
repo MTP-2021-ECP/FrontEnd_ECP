@@ -18,7 +18,7 @@
         </v-img>
         <div>
           <p class="text-center pt-6">
-             aux disponibilités de
+            Accédez aux disponibilités de
             <span class="deep-orange--text font-weight-medium"
               >dizaines de milliers</span
             >
