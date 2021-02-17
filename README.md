@@ -1,4 +1,4 @@
-# App RDV Vaccination COVid
+# App RDV Vaccination COVID2021
 
 ## Project setup
 ```
